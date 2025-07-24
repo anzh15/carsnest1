@@ -8,7 +8,7 @@ function Home() {
   const navigate = useNavigate(); // ✅ Hook MUST be at top level
 
   useEffect(() => {
-    fetch("http://localhost:4000/cars")
+    fetch("https://carsnest.onrender.com/cars")
       .then((res) => res.json())
       .then((data) => setCars(data))
       .catch((err) => console.error("Error fetching cars:", err));
