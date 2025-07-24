@@ -1,0 +1,35 @@
+.car-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 20px;
+  color: #1e3a8a;
+  text-decoration: none;
+}
+.buy-button {
+  padding: 10px 20px;
+  background-color: #007bff; /* Blue */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 20px;
+}
+
+.buy-button:hover {
+  background-color: #fe2a23; /* Darker blue on hover */
+}

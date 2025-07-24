@@ -1,0 +1,206 @@
+/* Base Styles */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to right, #f0f2f5, #dfe9f3);
+  color: #333;
+}
+
+.app {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Search Bar */
+.search-bar {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.search-bar input {
+  padding: 0.8rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px 0 0 8px;
+  outline: none;
+  font-size: 16px;
+  width: 300px;
+  transition: box-shadow 0.2s ease;
+}
+
+.search-bar input:focus {
+  box-shadow: 0 0 5px rgba(100, 100, 255, 0.4);
+}
+
+.search-bar button {
+  padding: 0.8rem 1rem;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 0 8px 8px 0;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s ease;
+}
+
+.search-bar button:hover {
+  background-color: #555;
+}
+
+/* Cards */
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.card {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-decoration: none;
+  color: inherit;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.card h2 {
+  margin-top: 0;
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+}
+
+.details {
+  font-size: 0.95rem;
+  margin-bottom: 6px;
+  color: #444;
+}
+
+/* No Results */
+.no-results {
+  text-align: center;
+  margin-top: 4rem;
+}
+
+.no-results h2 {
+  font-weight: 500;
+}
+
+/* Navigation Button */
+.nav-btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.6rem 1.2rem;
+  background-color: #333;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background 0.3s ease;
+}
+
+.nav-btn:hover {
+  background-color: #555;
+}
+
+/* Footer */
+.footer-container {
+  margin-top: 3rem;
+  text-align: center;
+}
+
+.footer {
+  font-size: 0.9rem;
+  color: #666;
+  padding: 1rem 0;
+  border-top: 1px solid #ddd;
+}
+
+/* Header */
+header {
+  background-color: #111;
+  color: #fff;
+  padding: 20px 40px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  transition: background-color 0.3s ease;
+}
+
+header:hover {
+  background-color: #1f1f1f;
+}
+
+header .header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Title */
+header h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  background: linear-gradient(135deg, #3b82f6, #9333ea);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 10px;
+  box-shadow: 0 0 12px rgba(59, 130, 246, 0.6);
+  transition: transform 0.3s ease;
+}
+
+header h1:hover {
+  transform: scale(1.05);
+}
+
+/* Navigation Buttons inside Header */
+nav button {
+  background-color: #fff;
+  color: #111;
+  font-weight: 600;
+  padding: 10px 20px;
+  border: none;
+  margin-left: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+nav button:hover {
+  background-color: #e5e5e5;
+  transform: scale(1.05);
+}
+/* Example inside page.css or a relevant file */
+
+.card {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 1.2rem;
+  margin: 1rem;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  animation: fadeInUp 0.5s ease forwards;
+  opacity: 0; /* Start invisible for animation */
+}
+
+.card:hover {
+  transform: translateY(-5px) scale(1.02);
+}
+
+/* Keyframes for fade + slide */
+@keyframes fadeInUp {
+  from {
+    transform: translateY(200px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}

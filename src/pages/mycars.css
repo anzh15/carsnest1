@@ -1,0 +1,60 @@
+.mycars-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;       /* Center horizontally */
+  justify-content: center;   /* Center vertically if page height allows */
+  padding: 20px;
+  min-height: 100vh;         /* Full viewport height for vertical centering */
+  background-color: #f5f5f5; /* Optional: subtle background */
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+.status-message {
+  color: green;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+.mycars-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;   /* Center cards in row */
+}
+
+.mycar-card {
+  border: 1px solid #ccc;
+  padding: 16px;
+  border-radius: 8px;
+  width: 240px;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.mycar-card h3 {
+  margin-top: 0;
+}
+
+.mycar-card input {
+  width: 90%;
+  padding: 4px;
+  margin: 4px 0;
+}
+
+.mycar-card button {
+  margin: 4px;
+  padding: 6px 10px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.mycar-card button:hover {
+  background-color: #0056b3;
+}
