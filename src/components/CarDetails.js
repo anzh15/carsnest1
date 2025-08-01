@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
+import { auth } from "../firebase"; // adjust the path
+
 import "./CarDetails.css";
 
 function CarDetails() {
   const { id } = useParams();
   const [car, setCar] = useState(null);
   const [loading, setLoading] = useState(true);
+  
 
   useEffect(() => {
     fetch(`https://carsnest.onrender.com/cars/${id}`)
@@ -21,17 +24,20 @@ function CarDetails() {
   }, [id]);
 
   if (loading) return <div>Loading...</div>;
-  if (!car) return (
-    <div>
-      Car not found.
-      <br />
-      <Link to="/">Back to Home</Link>
-    </div>
-  );
+  if (!car)
+    return (
+      <div>
+        Car not found.
+        <br />
+        <Link to="/">Back to Home</Link>
+      </div>
+    );
 
   return (
     <div className="car-details">
-      <h1>{car.name} ({car.year})</h1>
+      <h1>
+        {car.name} ({car.year})
+      </h1>
       <p>📍 Location: {car.location}</p>
       <p>💰 Price: ₹ {car.price?.toLocaleString()}</p>
       <p>🚗 KMs Driven: {car.kms_driven?.toLocaleString()} km</p>
@@ -41,10 +47,20 @@ function CarDetails() {
       <p>🛒 Seller Type: {car.seller_type}</p>
       <p>🌐 Source: {car.source}</p>
       <br />
-      <button className="buy-button" onClick={() => alert('Thank you for your interest! We will contact you soon.')}>
+     <button
+  className="buy-button"
+  onClick={() => {
+    const user = auth.currentUser;
+    if (!user) {
+      alert("Please log in to proceed with buying this car.");
+    } else {
+      alert("Thank you for your interest! We will contact you soon.");
+    }
+  }}
+>
   Buy Now
 </button>
- <br /> <br />
+      <br /> <br />
       <Link to="/">← Back to Home</Link>
     </div>
   );
